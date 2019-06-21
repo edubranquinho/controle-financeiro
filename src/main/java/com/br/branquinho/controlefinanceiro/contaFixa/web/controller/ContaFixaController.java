@@ -6,6 +6,8 @@ import com.br.branquinho.controlefinanceiro.contaFixa.web.view.ContaFixaView;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/contaFixa")
@@ -20,5 +22,10 @@ public class ContaFixaController {
     @PostMapping
     public ContaFixaView criar(@RequestBody @Valid ContaFixaForm form) {
         return ContaFixaView.fromEntity(contaFixaService.salvar(form.toEntity()));
+    }
+
+    @GetMapping
+    public List<ContaFixaView> listar() {
+        return contaFixaService.listar().stream().map(ContaFixaView::fromEntity).collect(Collectors.toList());
     }
 }
