@@ -12,3 +12,9 @@ CREATE TABLE conta_fixa(
         nome VARCHAR (50) UNIQUE NOT NULL,
         valor NUMERIC(8,2)
 );
+
+CREATE TABLE conta_corrente(
+    id serial PRIMARY KEY,
+    nome VARCHAR (50) UNIQUE NOT NULL,
+    saldo NUMERIC(8,2)
+);
