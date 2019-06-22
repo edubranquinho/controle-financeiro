@@ -1,6 +1,7 @@
 package com.br.branquinho.controlefinanceiro.contaFixa.model;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "conta_fixa")
@@ -10,6 +11,7 @@ public class ContaFixa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
+    private BigDecimal valor;
 
     public Integer getId() {
         return id;
@@ -25,5 +27,13 @@ public class ContaFixa {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 }

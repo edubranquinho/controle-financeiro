@@ -22,4 +22,8 @@ public class ContaFixaService {
     public List<ContaFixa> listar() {
         return contaFixaRepository.findAll();
     }
+
+    public void excluir(int id) {
+        contaFixaRepository.deleteById(id);
+    }
 }

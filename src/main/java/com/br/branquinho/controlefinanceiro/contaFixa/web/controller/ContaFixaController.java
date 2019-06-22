@@ -28,4 +28,9 @@ public class ContaFixaController {
     public List<ContaFixaView> listar() {
         return contaFixaService.listar().stream().map(ContaFixaView::fromEntity).collect(Collectors.toList());
     }
+
+    @DeleteMapping("/{id}")
+    public void excluir(@PathVariable int id) {
+        contaFixaService.excluir(id);
+    }
 }

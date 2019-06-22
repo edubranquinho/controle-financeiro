@@ -9,5 +9,6 @@ select * from pg_tables where schemaname='financeiro';
 
 CREATE TABLE conta_fixa(
         id serial PRIMARY KEY,
-        nome VARCHAR (50) UNIQUE NOT NULL
+        nome VARCHAR (50) UNIQUE NOT NULL,
+        valor NUMERIC(8,2)
 );
